@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New Manga</title>
+</head>
+<body>
+	<form th:object="${newManga}"
+		th:action="@{/update/{id}(id=${newManga.id})}" method="POST">
+		Manga title: <input name="title" size="20" th:field="*{title}">
+		<br /> Manga genre: <input name="genre" size="20" th:field="*{genre}">
+		<br /> Manga release date: <input name="releaseDate" size="20"
+			th:field="*{releaseDate}"> <br /> <input name="submit"
+			type="submit" value="submit" />
+	</form>
+	<a href="viewAll">View all mangas</a>
+</body>
+</html>

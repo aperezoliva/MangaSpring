@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View all Mangas</title>
+</head>
+<body>
+	<form>
+		<table>
+			<tr th:each="currentManga : ${mangas}">
+				<td th:text="${currentManga.id}" />
+				<td th:text="${currentManga.title}" />
+				<td th:text="${currentManga.genre}" />
+				<td th:text="${currentManga.releaseDate}" />
+				<td><a th:href="@{/edit/{id}(id=${currentManga.id})}">Edit</a>
+				</td>
+				<td><a th:href="@{/delete/{id}(id=${currentManga.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>
+	<a href="../inputManga">Add a new manga</a>
+</body>
+</html>
